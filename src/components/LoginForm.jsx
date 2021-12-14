@@ -24,9 +24,10 @@ const LoginForm = () => {
     <div className="wrapper">
       <div className="form">
         <h1 className="title">Chat Application</h1>
+        <div className="loginAndPassword">use username: admin and the same password </div>
         <form onSubmit={handleSubmit}>
           <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required/>
-          <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required/>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required/>
           <div align="center">
             <button type="submit" className="button">
               <span>Start Chatting</span>

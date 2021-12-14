@@ -310,3 +310,8 @@
   text-align: center;
   margin-top: 20px;
 }
+.loginAndPassword {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-align: center;
+}
