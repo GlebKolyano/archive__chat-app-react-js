@@ -49,7 +49,7 @@ const ChatFeed = ({chats, activeChat, userName, messages}) => {
       {getMessages()}
       <div style={{height: "100px"}}></div>
       <div className="message__form-wrapper">
-        <MessageForm {...props} chatId={activeChat} />
+        <MessageForm  chatId={activeChat} />
       </div>
     </div>
   )
