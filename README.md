@@ -1,3 +1,5 @@
+### [Open project](https://chat-application-react-js-peqsahs78-glebkolyano.vercel.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
