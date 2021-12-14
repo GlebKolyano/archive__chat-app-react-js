@@ -3,8 +3,8 @@ import MyMessage from "./MyMessage"
 import TheirMessages from "./TheirMessages"
 
 
-const ChatFeed = ({chats, activeChat, userName, messages}) => {
-  
+const ChatFeed = (props) => {
+  const {chats, activeChat, userName, messages} = props
   const chat = chats && chats[activeChat]
   
   console.log(chats)
@@ -18,13 +18,13 @@ const ChatFeed = ({chats, activeChat, userName, messages}) => {
 
       return (
         <div key={index} style={{width: "100%"}}>
-          <div className="message">
+          <div className="message-block">
             {isMyMessage 
             ? <MyMessage message={message} /> 
             : <TheirMessages message={message} lastMessage={messages[lastMessageKey]}/>}
           </div>
-          <div className="read" style={{marginRight: isMyMessage ? "18px" : "0px", marginLeft: isMyMessage ? "0px" : "68px"}}>
-            read
+          <div className="read-receipts" style={{marginRight: isMyMessage ? "18px" : "0px", marginLeft: isMyMessage ? "0px" : "68px"}}>
+        
           </div>
         </div>
         
@@ -38,18 +38,18 @@ const ChatFeed = ({chats, activeChat, userName, messages}) => {
   if (!chat) return "Loading..."
   return (
     <div className="chat-feed">
-      <div className="chat__title-wrapper">
-        <div className="chat__title">
+      <div className="chat-title-container">
+        <div className="chat-title">
           {chat?.title}
         </div>
-        <div className="chat__subtitle">
+        <div className="chat-subtitle">
           {chat.people.map(person => `${person.person.username}`)}
         </div>
       </div>
       {getMessages()}
       <div style={{height: "100px"}}></div>
-      <div className="message__form-wrapper">
-        <MessageForm  chatId={activeChat} />
+      <div className="message-form-wrapper">
+        <MessageForm  {...props}  chatId={activeChat} />
       </div>
     </div>
   )

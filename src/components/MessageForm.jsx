@@ -1,7 +1,7 @@
 
 
 
-const MessageForm = () => {
+const MessageForm = (props) => {
   return (
     <div>MessageForm</div>
   )
